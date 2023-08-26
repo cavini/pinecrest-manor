@@ -1,41 +1,36 @@
 import React from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Bookings from "./pages/Bookings";
+import Cabins from "./pages/Cabins";
+import Settings from "./pages/Settings";
+import Account from "./pages/Account";
+import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
+import NewUsers from "./pages/Users";
 import GlobalStyles from "./styles/GlobalStyles";
-import Heading, { HeadingType } from "./ui/Headers";
-import StyledApp from "./ui/StyledApp";
-import Button, { ButtonSize, ButtonVariation } from "./ui/Button";
-import Row, { RowType } from "./ui/Row";
-import Input from "./ui/Input";
+import AppLayout from "./components/AppLayout";
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <StyledApp>
-        <Row>
-          <Row type={RowType.horizontal}>
-            <Heading as={HeadingType.H1}>Pinecrest Manor</Heading>
-            <div>
-              <Heading as={HeadingType.H2}>Check in and out</Heading>
-              <Button onClick={() => alert("Check in")}>Check in</Button>
-              <Button
-                variation={ButtonVariation.secondary}
-                size={ButtonSize.small}
-                onClick={() => alert("Check out")}
-              >
-                Check out
-              </Button>
-            </div>
-          </Row>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<Navigate replace to="dashboard" />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="bookings" element={<Bookings />} />
+            <Route path="cabins" element={<Cabins />} />
+            <Route path="users" element={<NewUsers />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="account" element={<Account />} />
+          </Route>
 
-          <Row>
-            <Heading as={HeadingType.H3}>Form</Heading>
-            <form>
-              <Input type="number" placeholder="Number of guests"></Input>
-              <Input type="number" placeholder="Number of guests"></Input>
-            </form>
-          </Row>
-        </Row>
-      </StyledApp>
+          <Route path="login" element={<Login />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
