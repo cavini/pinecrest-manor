@@ -1,11 +1,12 @@
 import React from "react";
 import GlobalStyles from "./styles/GlobalStyles";
+import Heading, { HeadingType } from "./ui/Headers";
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <h1>hi</h1>
+      <Heading as={HeadingType.H2}>Pinecrest Manor</Heading>
     </>
   );
 };
