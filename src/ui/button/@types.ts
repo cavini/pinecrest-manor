@@ -1,4 +1,4 @@
-import { css, styled } from "styled-components";
+import { css } from "styled-components";
 
 export enum ButtonVariation {
   primary = "primary",
@@ -12,7 +12,7 @@ export enum ButtonSize {
   large = "large",
 }
 
-interface ButtonProps
+export interface ButtonProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLHeadingElement>,
     HTMLHeadingElement
@@ -21,7 +21,7 @@ interface ButtonProps
   size?: ButtonSize;
 }
 
-const sizes = {
+export const sizes = {
   small: css`
     font-size: 1.2rem;
     padding: 0.4rem 0.8rem;
@@ -41,7 +41,7 @@ const sizes = {
   `,
 };
 
-const variations = {
+export const variations = {
   primary: css`
     color: var(--color-brand-50);
     background-color: var(--color-brand-600);
@@ -68,18 +68,3 @@ const variations = {
     }
   `,
 };
-
-const Button = styled.button<ButtonProps>`
-  border: none;
-  border-radius: var(--border-radius-sm);
-  box-shadow: var(--shadow-sm);
-  ${(props) => props.size && sizes[props.size]}
-  ${(props) => props.variation && variations[props.variation]}
-`;
-
-Button.defaultProps = {
-  variation: ButtonVariation.primary,
-  size: ButtonSize.medium,
-};
-
-export default Button;

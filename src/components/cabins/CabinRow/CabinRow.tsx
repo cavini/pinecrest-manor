@@ -1,18 +1,14 @@
 import React from "react";
-import { Cabin } from "./CabinTable";
-import { TableRow } from "../../ui/Table";
-import { CabinText, DiscountText, PriceText } from "../../ui/Texts";
-import { formatCurrency } from "../../utils";
+import { CabinText, DiscountText, PriceText } from "../../../ui/text/Texts";
+import { formatCurrency } from "../../../utils";
 import { useMutation } from "@tanstack/react-query";
-import { deleteCabin } from "../../services/apiCabins";
-import { queryClient } from "../../context/config";
+import { deleteCabin } from "../../../services/apiCabins";
+import { queryClient } from "../../../context/config";
 import { PostgrestError } from "@supabase/supabase-js";
 import { toast } from "react-hot-toast";
-import { CabinImg } from "../../ui/StyledLogo";
-
-interface CabinRowProps {
-  cabin: Cabin;
-}
+import { CabinImg } from "../../../ui/cabin";
+import { CabinRowProps } from "./@types";
+import { TableRow } from "../../../ui/table/TableRow";
 
 const CabinRow = ({ cabin }: CabinRowProps) => {
   const { isLoading: isDeleting, mutate } = useMutation({

@@ -1,6 +1,8 @@
 import React from "react";
-import Heading, { HeadingType } from "../ui/Headings";
-import Row, { RowType } from "../ui/Row";
+import Heading from "../ui/text/Headings";
+import Row from "../ui/row/Row";
+import { RowType } from "../ui/row/@types";
+import { HeadingType } from "../ui/text/@types";
 
 function Bookings() {
   return (

@@ -1,6 +1,7 @@
 import React from "react";
-import Heading, { HeadingType } from "../ui/Headings";
-import Row from "../ui/Row";
+import Heading from "../ui/text/Headings";
+import Row from "../ui/row/Row";
+import { HeadingType } from "../ui/text/@types";
 
 function Account() {
   return (

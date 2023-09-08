@@ -1,20 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { getCabins } from "../../services/apiCabins";
-import Spinner from "../../ui/Spinner";
-import { Table, TableHeader } from "../../ui/Table";
-import CabinRow from "./CabinRow";
-
-export interface Cabin {
-  id: number;
-  created_at: string;
-  name: string;
-  maxCapacity: number;
-  regularPrice: number;
-  discount: number;
-  description: string;
-  image: string;
-}
+import { getCabins } from "../../../services/apiCabins";
+import Spinner from "../../../ui/Spinner";
+import { Table } from "../../../ui/table/Table";
+import CabinRow from "../CabinRow/CabinRow";
+import { Cabin } from "../@types";
+import { TableHeader } from "../../../ui/table/TableHeader";
 
 const CabinTable = () => {
   const {

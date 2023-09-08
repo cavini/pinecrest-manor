@@ -1,12 +1,12 @@
-import { Img, StyledLogo } from "../ui/StyledLogo";
+import { LogoImg, StyledLogo } from "../ui/StyledLogo";
 import React from "react";
 
-function Logo() {
+const Logo = () => {
   return (
     <StyledLogo>
-      <Img src="/logo-light.png" alt="Logo" />
+      <LogoImg src="/logo-light.png" alt="Logo" />
     </StyledLogo>
   );
-}
+};
 
 export default Logo;

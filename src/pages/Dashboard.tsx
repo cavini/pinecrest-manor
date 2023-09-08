@@ -1,6 +1,8 @@
 import React from "react";
-import Row, { RowType } from "../ui/Row";
-import Heading, { HeadingType } from "../ui/Headings";
+import Row from "../ui/row/Row";
+import Heading from "../ui/text/Headings";
+import { RowType } from "../ui/row/@types";
+import { HeadingType } from "../ui/text/@types";
 
 const Dashboard = () => {
   return (

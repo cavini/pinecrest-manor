@@ -1,16 +1,5 @@
 import { css, styled } from "styled-components";
-export enum RowType {
-  horizontal = "horizontal",
-  vertical = "vertical",
-}
-
-interface RowProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLHeadingElement>,
-    HTMLHeadingElement
-  > {
-  type?: RowType;
-}
+import { RowProps, RowType } from "./@types";
 
 const Row = styled.div<RowProps>`
   display: flex;

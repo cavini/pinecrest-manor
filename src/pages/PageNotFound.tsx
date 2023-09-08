@@ -1,33 +1,11 @@
-import styled from "styled-components";
-
 import React from "react";
-import Button, { ButtonSize } from "../ui/Button";
-import Heading, { HeadingType } from "../ui/Headings";
+import Button from "../ui/button/Button";
+import Heading from "../ui/text/Headings";
 import { useMoveBack } from "../hooks/useMoveBack";
-
-const StyledPageNotFound = styled.main`
-  height: 100vh;
-  background-color: var(--color-grey-50);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4.8rem;
-`;
-
-const Box = styled.div`
-  /* box */
-  background-color: var(--color-grey-0);
-  border: 1px solid var(--color-grey-100);
-  border-radius: var(--border-radius-md);
-
-  padding: 4.8rem;
-  flex: 0 1 96rem;
-  text-align: center;
-
-  & h1 {
-    margin-bottom: 3.2rem;
-  }
-`;
+import { StyledPageNotFound } from "../ui/StyledPageNotFound";
+import { Box } from "../ui/Box";
+import { HeadingType } from "../ui/text/@types";
+import { ButtonSize } from "../ui/button/@types";
 
 function PageNotFound() {
   const moveBack = useMoveBack();
