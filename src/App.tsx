@@ -10,10 +10,14 @@ import PageNotFound from "./pages/PageNotFound";
 import NewUsers from "./pages/Users";
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./components/AppLayout";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./context/config";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const App = () => {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
@@ -31,7 +35,7 @@ const App = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </QueryClientProvider>
   );
 };
 
