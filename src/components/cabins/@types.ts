@@ -6,5 +6,5 @@ export interface Cabin {
   regularPrice: number;
   discount: number;
   description: string;
-  image: string;
+  image: File | FileList | any;
 }

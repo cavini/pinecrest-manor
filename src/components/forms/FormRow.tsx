@@ -1,16 +1,9 @@
 import React from "react";
-import { FormRowOrientation, StyledFormRow } from "../../ui/form/FormRow";
+import { StyledFormRow } from "../../ui/form/FormRow";
 import { FormLabel } from "../../ui/form/FormLabel";
 import { FormError } from "../../ui/form/FormError";
+import { FormRowProps } from "./@types";
 
-// TODO: Refactor interface
-
-interface FormRowProps {
-  label?: string;
-  error?: string;
-  children?: any;
-  orientation?: FormRowOrientation;
-}
 const FormRow = ({ label, error, children, orientation }: FormRowProps) => {
   return (
     <StyledFormRow orientation={orientation}>
